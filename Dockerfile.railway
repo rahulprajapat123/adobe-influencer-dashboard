@@ -1,0 +1,25 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH=/app/services/common
+ENV PORT=8501
+
+# Copy only requirements first for better caching
+COPY requirements.railway.txt ./requirements.txt
+
+# Install dependencies (no ffmpeg, no heavy ML tools for faster build)
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY . .
+
+# Expose Streamlit port
+EXPOSE 8501
+
+# Run Streamlit directly (Railway handles the port)
+CMD streamlit run serve_dashboard.py --server.port=${PORT:-8501} --server.address=0.0.0.0 --server.headless=true

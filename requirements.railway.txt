@@ -1,0 +1,36 @@
+# Core web framework (fast install)
+fastapi==0.115.12
+uvicorn[standard]==0.34.0
+streamlit==1.44.1
+
+# Database & storage (lightweight)
+sqlalchemy==2.0.39
+pydantic==2.11.2
+pydantic-settings==2.8.1
+PyYAML==6.0.2
+pandas==2.2.3
+duckdb==1.2.2
+python-dotenv==1.1.0
+
+# API clients (lightweight)
+httpx==0.28.1
+apify-client==1.7.1
+google-api-python-client==2.154.0
+
+# Networking & graphs
+networkx==3.4.2
+
+# ChromaDB with minimal deps
+chromadb==0.6.3
+
+# SKIP HEAVY ML MODELS for Railway (they timeout)
+# numpy - already included via pandas
+# spacy, keybert, bertopic, transformers - TOO HEAVY for Railway
+# faster-whisper - requires heavy models
+# vaderSentiment - can add if needed (lightweight)
+
+# For testing
+pytest==8.3.5
+
+# Document generation
+python-docx==1.1.2

@@ -1,7 +1,15 @@
+# Git
 .git
 .gitignore
+.github/
+
+# Environment
 .env
 .venv/
+venv/
+env/
+
+# Python cache
 .pytest_cache/
 __pycache__/
 *.pyc
@@ -10,11 +18,40 @@ __pycache__/
 *.log
 pytest-cache-files-*/
 
+# Data directories (large files)
 data/*
 !data/sample/
 !data/sample/**
 
+# Test data
 anikjaindesign/
 yt_insta_videos/
 yt_insta_videos_probe/
 yt_insta_videos_validation/
+
+# Documentation
+*.md
+!README.md
+
+# IDE
+.vscode/
+.idea/
+
+# Docker
+Dockerfile
+Dockerfile.api
+docker-compose.yml
+.dockerignore
+
+# CI/CD
+cloudbuild.*.yaml
+.github/
+
+# Test files
+test_*.py
+*_test.py
+tests/
+
+# Local configs
+*.local
+.DS_Store

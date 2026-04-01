@@ -21,6 +21,9 @@ Do not try to expose both apps from one Cloud Run container. Cloud Run expects o
 - Project ID: `project-ce75d2f4-bdb3-4abe-a10`
 - Region: `asia-south1`
 - Artifact Registry base: `asia-south1-docker.pkg.dev/project-ce75d2f4-bdb3-4abe-a10/app-images`
+- Cloud Storage bucket: `adobe-api-data`
+- Frontend URL for API CORS: `https://adobe-influencer-intel.streamlit.app/`
+- API access: `public`
 
 ## Recommended Naming
 
@@ -55,7 +58,7 @@ DATA_DIR=/mnt/data
 IMPORTS_DIR=/mnt/data/imports
 OUTPUT_DIR=/mnt/data/outputs
 RAW_LAKE_DIR=/mnt/data/raw_lake
-APIFY_SCRAPED_DIR=/mnt/data/apify_scraped data
+APIFY_SCRAPED_DIR=/mnt/data/apify_scraped_data
 MEDIA_DOWNLOAD_DIR=/mnt/data/media/downloads
 MEDIA_AUDIO_DIR=/mnt/data/media/audio
 MEDIA_TRANSCRIPT_DIR=/mnt/data/media/transcripts
@@ -63,14 +66,14 @@ DUCKDB_PATH=/tmp/analytics.duckdb
 VECTOR_STORE_PATH=/tmp/chroma
 POSTGRES_DB=adobe_influencer
 POSTGRES_USER=adobe
-POSTGRES_PASSWORD=your-password
+POSTGRES_PASSWORD=from-secret-manager
 CLOUDSQL_INSTANCE_CONNECTION_NAME=project-ce75d2f4-bdb3-4abe-a10:asia-south1:adobe-influencer-pg
 ```
 
 Set this only on the API service:
 
 ```env
-CORS_ALLOWED_ORIGINS=https://your-dashboard-service-url
+CORS_ALLOWED_ORIGINS=https://adobe-influencer-intel.streamlit.app/
 ```
 
 If you prefer a single explicit database DSN instead of Cloud SQL socket settings, set:
@@ -103,7 +106,7 @@ In Cloud Run console:
 3. Set the container port to `8080`
 4. Add the environment variables listed above
 5. If using Cloud SQL, add the instance connection on the service
-6. If using Cloud Storage persistence, mount the bucket at `/mnt/data`
+6. Mount bucket `adobe-api-data` at `/mnt/data`
 7. Keep unauthenticated access enabled if this is a public UI
 8. Deploy
 
@@ -115,10 +118,10 @@ In Cloud Run console:
 2. Select the API image from Artifact Registry
 3. Set the container port to `8080`
 4. Add the shared environment variables
-5. Add `CORS_ALLOWED_ORIGINS=https://YOUR_DASHBOARD_URL`
+5. Add `CORS_ALLOWED_ORIGINS=https://adobe-influencer-intel.streamlit.app/`
 6. Add the same Cloud SQL connection used by the dashboard
-7. Mount the same Cloud Storage bucket at `/mnt/data` if you need persistent outputs, media, imports, or raw payloads
-8. Decide whether this service should allow unauthenticated access
+7. Mount bucket `adobe-api-data` at `/mnt/data`
+8. Allow unauthenticated access because this API is intended to be public
 9. Deploy
 
 ## Cloud SQL Setup
@@ -129,6 +132,7 @@ Create a new PostgreSQL Cloud SQL instance in `asia-south1` with:
 - Database version: PostgreSQL 16
 - Database: `adobe_influencer`
 - User: `adobe`
+- Password: store `786786rahul` in Secret Manager or Cloud Run secrets, not in repo files
 
 After creation, use its instance connection name:
 
@@ -156,3 +160,4 @@ Do not rely on the mounted bucket for SQLite, DuckDB, or Chroma durability/concu
 - Google documents that Cloud Storage FUSE on Cloud Run is not fully POSIX-compliant and does not provide file locking for concurrent writes. That is why this guide keeps Cloud SQL as the database and moves DuckDB/Chroma to `/tmp`. Source: https://cloud.google.com/run/docs/configuring/services/cloud-storage-volume-mounts
 - The dashboard does not need to call the API to function, but if you want browser-based API access from the dashboard domain, keep `CORS_ALLOWED_ORIGINS` restricted to the dashboard URL.
 - If media transcription is enabled in production, the container already includes `ffmpeg`.
+- Do not hardcode database credentials in tracked files. Use Cloud Run environment secrets or Secret Manager for `POSTGRES_PASSWORD`.
