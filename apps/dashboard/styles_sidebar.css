@@ -1,54 +1,171 @@
-/* ===== SIDEBAR STYLES ===== */
+/* ===== SIDEBAR STYLES - CLEAN & SOLID (Blue Theme) ===== */
 
+/* Solid light blue/gray background for sidebar */
 [data-testid="stSidebar"] {
-    background: transparent;
+    background: #f0f4f8 !important;
 }
 
 [data-testid="stSidebar"] > div {
-    background:
-        radial-gradient(circle at top left, rgba(255, 180, 107, 0.18), transparent 24%),
-        linear-gradient(180deg, rgba(18, 35, 58, 0.96) 0%, rgba(27, 56, 86, 0.96) 100%);
-    border-right: 1px solid rgba(132, 167, 196, 0.18);
+    background: #f0f4f8 !important;
+    border-right: 3px solid #0066cc !important;
 }
 
-[data-testid="stSidebar"] * {
-    color: rgba(241, 245, 249, 0.96);
-}
-
-[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p,
+/* Dark text in sidebar for readability */
+[data-testid="stSidebar"] *,
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] p,
 [data-testid="stSidebar"] label,
-[data-testid="stSidebar"] .stCaption {
-    color: rgba(226, 232, 240, 0.9);
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] div {
+    color: #1a202c !important;
 }
 
+[data-testid="stSidebar"] .stCaption,
+[data-testid="stSidebar"] small {
+    color: #4a5568 !important;
+}
+
+/* Form containers in sidebar - white with blue border */
 [data-testid="stSidebar"] [data-testid="stForm"] {
-    background: rgba(76, 109, 138, 0.20);
-    border: 1px solid rgba(132, 167, 196, 0.20);
-    box-shadow: none;
-    backdrop-filter: blur(14px);
+    background: #ffffff !important;
+    border: 2px solid #0066cc !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.1) !important;
 }
 
+/* Input fields in sidebar - clean white */
 [data-testid="stSidebar"] div[data-baseweb="input"] > div,
 [data-testid="stSidebar"] div[data-baseweb="select"] > div,
 [data-testid="stSidebar"] div[data-baseweb="textarea"] {
-    background: rgba(73, 103, 131, 0.28);
-    border: 1px solid rgba(140, 175, 205, 0.20);
+    background: #ffffff !important;
+    border: 2px solid #cbd5e0 !important;
+    border-radius: 6px !important;
 }
 
 [data-testid="stSidebar"] div[data-baseweb="textarea"] textarea,
-[data-testid="stSidebar"] div[data-baseweb="input"] input {
-    color: rgba(248, 250, 252, 0.96);
+[data-testid="stSidebar"] div[data-baseweb="input"] input,
+[data-testid="stSidebar"] div[data-baseweb="select"] select {
+    color: #1a202c !important;
+    background: #ffffff !important;
 }
 
+[data-testid="stSidebar"] input::placeholder,
+[data-testid="stSidebar"] textarea::placeholder {
+    color: #718096 !important;
+}
+
+[data-testid="stSidebar"] input:focus,
+[data-testid="stSidebar"] textarea:focus,
+[data-testid="stSidebar"] select:focus {
+    border-color: #0066cc !important;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1) !important;
+}
+
+/* Sidebar buttons - Blue */
 [data-testid="stSidebar"] .stButton > button,
 [data-testid="stSidebar"] .stFormSubmitButton > button {
-    background: linear-gradient(135deg, rgba(255, 186, 127, 0.96), rgba(255, 135, 92, 0.96));
-    border-color: rgba(255, 212, 170, 0.35);
-    color: #17293c;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.20);
+    background: #0066cc !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.2) !important;
 }
 
+[data-testid="stSidebar"] .stButton > button:hover,
+[data-testid="stSidebar"] .stFormSubmitButton > button:hover {
+    background: #0052a3 !important;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3) !important;
+}
+
+/* Alerts in sidebar */
 [data-testid="stSidebar"] .stAlert {
-    background: rgba(74, 106, 135, 0.24);
-    border: 1px solid rgba(140, 175, 205, 0.22);
+    background: #e6f2ff !important;
+    border: 2px solid #0066cc !important;
+    border-radius: 8px !important;
+    color: #1a202c !important;
+}
+
+[data-testid="stSidebar"] .stAlert [data-testid="stMarkdownContainer"] {
+    color: #1a202c !important;
+}
+
+/* Checkboxes and toggles */
+[data-testid="stSidebar"] [data-testid="stCheckbox"] label {
+    color: #1a202c !important;
+}
+
+[data-testid="stSidebar"] input[type="checkbox"] {
+    background: #ffffff !important;
+    border: 2px solid #cbd5e0 !important;
+}
+
+[data-testid="stSidebar"] input[type="checkbox"]:checked {
+    background: #0066cc !important;
+    border-color: #0066cc !important;
+}
+
+/* Radio buttons */
+[data-testid="stSidebar"] [data-testid="stRadio"] label {
+    color: #1a202c !important;
+}
+
+/* Selectbox */
+[data-testid="stSidebar"] [data-baseweb="select"] {
+    background: #ffffff !important;
+}
+
+[data-testid="stSidebar"] [data-baseweb="select"] svg {
+    fill: #1a202c !important;
+}
+
+/* Dividers */
+[data-testid="stSidebar"] hr {
+    border-color: #cbd5e0 !important;
+    opacity: 1 !important;
+}
+
+/* Section headers in sidebar */
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: #0066cc !important;
+    font-weight: 700 !important;
+    padding-bottom: 0.5rem !important;
+    border-bottom: 2px solid #0066cc !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Tabs in sidebar */
+[data-testid="stSidebar"] [data-baseweb="tab"] {
+    background: #ffffff !important;
+    border: 2px solid #cbd5e0 !important;
+}
+
+[data-testid="stSidebar"] [data-baseweb="tab"]:hover {
+    border-color: #0066cc !important;
+}
+
+/* Success/Info/Warning messages */
+[data-testid="stSidebar"] .stSuccess {
+    background: #d4edda !important;
+    border: 2px solid #28a745 !important;
+}
+
+[data-testid="stSidebar"] .stInfo {
+    background: #e6f2ff !important;
+    border: 2px solid #0066cc !important;
+}
+
+[data-testid="stSidebar"] .stWarning {
+    background: #fff3cd !important;
+    border: 2px solid #ffc107 !important;
+}
+
+[data-testid="stSidebar"] .stError {
+    background: #f8d7da !important;
+    border: 2px solid #dc3545 !important;
 }

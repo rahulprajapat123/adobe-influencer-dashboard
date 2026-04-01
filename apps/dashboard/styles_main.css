@@ -1,101 +1,204 @@
-/* ===== MAIN CONTENT AREA STYLES ===== */
+/* ===== MAIN CONTENT AREA STYLES - CLEAN & SOLID ===== */
 
 :root {
-    --app-text: #11263b;
-    --app-muted: #5d6b82;
-    --app-border: rgba(17, 38, 59, 0.12);
-    --app-surface: rgba(232, 240, 245, 0.70);
-    --app-surface-strong: rgba(219, 232, 239, 0.86);
-    --app-surface-dark: rgba(17, 38, 59, 0.92);
-    --app-shadow: 0 18px 40px rgba(17, 38, 59, 0.12);
+    --primary-red: #FF0000;
+    --text-dark: #1a1a1a;
+    --text-secondary: #4a5568;
+    --border-light: #e2e8f0;
+    --bg-white: #ffffff;
+    --bg-light: #f8fafc;
+    --bg-card: #ffffff;
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-large: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
+/* Clean white background */
 .stApp {
-    color: var(--app-text);
-    background:
-        radial-gradient(circle at 15% 20%, rgba(255, 173, 96, 0.24), transparent 28%),
-        radial-gradient(circle at 85% 15%, rgba(75, 155, 255, 0.18), transparent 25%),
-        radial-gradient(circle at 78% 78%, rgba(63, 124, 172, 0.12), transparent 24%),
-        linear-gradient(180deg, #f3ece2 0%, #e8f0f5 52%, #dde7ef 100%);
+    background: #f8fafc !important;
+    color: var(--text-dark) !important;
 }
 
 [data-testid="stAppViewContainer"],
 [data-testid="stAppViewContainer"] > .main,
-[data-testid="stMain"],
-[data-testid="stMainBlockContainer"],
-.block-container,
-[data-testid="stHeader"],
-[data-testid="stToolbar"] {
-    background: transparent;
+[data-testid="stMain"] {
+    background: #f8fafc !important;
 }
 
 [data-testid="stHeader"] {
-    border-bottom: 0;
+    background: #ffffff !important;
+    border-bottom: 1px solid var(--border-light);
 }
 
+/* Clear text - no transparency */
 .stApp h1,
 .stApp h2,
 .stApp h3,
+.stApp h4,
 .stApp label,
 .stApp p,
 .stApp li,
 .stApp span,
 .stApp div {
-    color: inherit;
+    color: var(--text-dark) !important;
 }
 
+/* Hero header - solid light blue gradient */
 .hero {
-    padding: 1.6rem 1.8rem;
-    border-radius: 24px;
-    background: linear-gradient(135deg, rgba(16, 34, 56, 0.96), rgba(31, 89, 112, 0.90));
-    color: #f8fafc;
-    box-shadow: 0 24px 60px rgba(18, 35, 58, 0.18);
-    margin-bottom: 1rem;
-    border: 1px solid rgba(255, 214, 170, 0.16);
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+    color: #ffffff !important;
+    box-shadow: var(--shadow-large);
+    margin-bottom: 2rem;
+    border: none;
 }
 
 .hero h1 {
     margin: 0;
-    font-size: 2.3rem;
-    letter-spacing: -0.03em;
-    color: #f8fafc;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    letter-spacing: -0.02em;
 }
 
 .hero p {
-    margin: 0.7rem 0 0 0;
-    font-size: 1rem;
-    color: rgba(248, 250, 252, 0.86);
+    margin: 0.8rem 0 0 0;
+    font-size: 1.1rem;
+    color: #ffffff !important;
+    opacity: 0.95;
 }
 
+/* Solid white cards with clear borders */
 .metric-card,
 .section-card,
 [data-testid="stForm"],
-[data-testid="stAlert"],
 [data-testid="stDataFrame"],
 div[data-testid="stTable"] {
-    background: linear-gradient(180deg, var(--app-surface-strong), var(--app-surface));
-    border: 1px solid var(--app-border);
-    box-shadow: var(--app-shadow);
-    backdrop-filter: blur(14px);
+    background: var(--bg-card) !important;
+    border: 2px solid var(--border-light) !important;
+    box-shadow: var(--shadow-card) !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
 }
 
+[data-testid="stAlert"] {
+    background: #fff4e6 !important;
+    border: 2px solid #ffb84d !important;
+    border-radius: 8px !important;
+}
+
+/* Metric cards */
 .metric-card {
-    padding: 1rem 1.1rem;
-    border-radius: 20px;
+    padding: 1.5rem !important;
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    border: 2px solid var(--border-light) !important;
 }
 
 .metric-label {
-    font-size: 0.8rem;
+    font-size: 0.875rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--app-muted);
+    letter-spacing: 0.05em;
+    color: var(--text-secondary) !important;
+    margin-bottom: 0.5rem;
 }
 
 .metric-value {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: var(--app-text);
-    margin-top: 0.3rem;
+    color: var(--text-dark) !important;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Tables - clear backgrounds */
+[data-testid="stDataFrame"] table,
+div[data-testid="stTable"] table {
+    background: #ffffff !important;
+}
+
+[data-testid="stDataFrame"] thead th,
+div[data-testid="stTable"] thead th {
+    background: var(--bg-light) !important;
+    color: var(--text-dark) !important;
+    font-weight: 600 !important;
+    border-bottom: 2px solid var(--border-light) !important;
+}
+
+[data-testid="stDataFrame"] tbody td,
+div[data-testid="stTable"] tbody td {
+    background: #ffffff !important;
+    color: var(--text-dark) !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+/* Expanders - solid backgrounds */
+[data-testid="stExpander"] {
+    background: #ffffff !important;
+    border: 2px solid var(--border-light) !important;
+    border-radius: 8px !important;
+}
+
+[data-testid="stExpander"] summary {
+    background: var(--bg-light) !important;
+    color: var(--text-dark) !important;
+    font-weight: 600 !important;
+}
+
+/* Section headers */
+h2, h3 {
+    color: var(--text-dark) !important;
+    font-weight: 700 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+    padding-bottom: 0.5rem !important;
+    border-bottom: 3px solid var(--primary-red) !important;
+}
+
+/* Code blocks */
+code {
+    background: var(--bg-light) !important;
+    color: var(--text-dark) !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 4px !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+pre {
+    background: var(--bg-light) !important;
+    border: 2px solid var(--border-light) !important;
+    border-radius: 8px !important;
+    padding: 1rem !important;
+}
+
+/* Buttons */
+.stButton > button {
+    background: var(--primary-red) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 2rem !important;
+    box-shadow: var(--shadow-card) !important;
+}
+
+.stButton > button:hover {
+    background: #CC0000 !important;
+    box-shadow: var(--shadow-large) !important;
+}
+
+/* Input fields */
+input, textarea, select {
+    background: #ffffff !important;
+    border: 2px solid var(--border-light) !important;
+    color: var(--text-dark) !important;
+    border-radius: 6px !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--primary-red) !important;
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1) !important;
 }
 
 .section-card {
