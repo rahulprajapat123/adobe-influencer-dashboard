@@ -1,0 +1,7 @@
+weights:
+  engagement_quality: 0.20
+  topic_relevance: 0.20
+  audience_sentiment: 0.15
+  adobe_product_fit: 0.25
+  audience_uniqueness: 0.10
+  risk_flags: 0.10

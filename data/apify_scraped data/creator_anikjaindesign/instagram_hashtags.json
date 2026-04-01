@@ -1,0 +1,10 @@
+{
+  "actor": "apify/instagram-hashtag-scraper",
+  "skipped": true,
+  "reason": "No hashtags were found in the creator's recent post captions.",
+  "payload": {
+    "hashtags": [],
+    "resultsType": "posts",
+    "resultsLimit": 8
+  }
+}

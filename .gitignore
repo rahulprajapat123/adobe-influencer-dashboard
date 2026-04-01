@@ -1,0 +1,76 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing
+.pytest_cache/
+pytest-cache-files-*/
+.coverage
+htmlcov/
+
+# Environment variables
+.env
+.env.local
+*.env
+!*.env.example
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.duckdb
+
+# Data files
+data/analytics.duckdb
+data/chroma/
+data/media/downloads/
+data/media/audio/
+data/media/transcripts/
+data/raw_lake/
+data/outputs/
+data/test_tmp/
+yt_insta_videos/
+yt_insta_videos_probe/
+yt_insta_videos_validation/
+anikjaindesign/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+temp/
+tmp/

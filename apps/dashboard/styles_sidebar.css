@@ -1,0 +1,54 @@
+/* ===== SIDEBAR STYLES ===== */
+
+[data-testid="stSidebar"] {
+    background: transparent;
+}
+
+[data-testid="stSidebar"] > div {
+    background:
+        radial-gradient(circle at top left, rgba(255, 180, 107, 0.18), transparent 24%),
+        linear-gradient(180deg, rgba(18, 35, 58, 0.96) 0%, rgba(27, 56, 86, 0.96) 100%);
+    border-right: 1px solid rgba(132, 167, 196, 0.18);
+}
+
+[data-testid="stSidebar"] * {
+    color: rgba(241, 245, 249, 0.96);
+}
+
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] .stCaption {
+    color: rgba(226, 232, 240, 0.9);
+}
+
+[data-testid="stSidebar"] [data-testid="stForm"] {
+    background: rgba(76, 109, 138, 0.20);
+    border: 1px solid rgba(132, 167, 196, 0.20);
+    box-shadow: none;
+    backdrop-filter: blur(14px);
+}
+
+[data-testid="stSidebar"] div[data-baseweb="input"] > div,
+[data-testid="stSidebar"] div[data-baseweb="select"] > div,
+[data-testid="stSidebar"] div[data-baseweb="textarea"] {
+    background: rgba(73, 103, 131, 0.28);
+    border: 1px solid rgba(140, 175, 205, 0.20);
+}
+
+[data-testid="stSidebar"] div[data-baseweb="textarea"] textarea,
+[data-testid="stSidebar"] div[data-baseweb="input"] input {
+    color: rgba(248, 250, 252, 0.96);
+}
+
+[data-testid="stSidebar"] .stButton > button,
+[data-testid="stSidebar"] .stFormSubmitButton > button {
+    background: linear-gradient(135deg, rgba(255, 186, 127, 0.96), rgba(255, 135, 92, 0.96));
+    border-color: rgba(255, 212, 170, 0.35);
+    color: #17293c;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.20);
+}
+
+[data-testid="stSidebar"] .stAlert {
+    background: rgba(74, 106, 135, 0.24);
+    border: 1px solid rgba(140, 175, 205, 0.22);
+}

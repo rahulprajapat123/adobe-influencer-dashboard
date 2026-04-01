@@ -1,0 +1,44 @@
+{
+  "creator_id": "real_saptarshiux",
+  "handle": "saptarshiux",
+  "profile_url": "https://www.instagram.com/saptarshiux/",
+  "hashtags_used": [
+    "haxlabs",
+    "ciberseguridad",
+    "inteligenciaartificial"
+  ],
+  "actors": {
+    "instagram_profile": {
+      "count": 1,
+      "path": "D:\\adobe_project\\data\\apify_scraped data\\real_saptarshiux\\instagram_profile.json"
+    },
+    "instagram_profile_api": {
+      "count": 1,
+      "path": "D:\\adobe_project\\data\\apify_scraped data\\real_saptarshiux\\instagram_profile_api.json"
+    },
+    "instagram_scraper": {
+      "count": 8,
+      "path": "D:\\adobe_project\\data\\apify_scraped data\\real_saptarshiux\\instagram_scraper.json"
+    },
+    "instagram_post": {
+      "count": 8,
+      "path": "D:\\adobe_project\\data\\apify_scraped data\\real_saptarshiux\\instagram_posts.json"
+    },
+    "instagram_reel": {
+      "count": 8,
+      "path": "D:\\adobe_project\\data\\apify_scraped data\\real_saptarshiux\\instagram_reels.json"
+    },
+    "instagram_api": {
+      "count": 8,
+      "path": "D:\\adobe_project\\data\\apify_scraped data\\real_saptarshiux\\instagram_api.json"
+    },
+    "instagram_hashtag": {
+      "count": 24,
+      "path": "D:\\adobe_project\\data\\apify_scraped data\\real_saptarshiux\\instagram_hashtags.json"
+    }
+  },
+  "comments_actor": {
+    "count": 1,
+    "path": "D:\\adobe_project\\data\\apify_scraped data\\real_saptarshiux\\instagram_comments.json"
+  }
+}

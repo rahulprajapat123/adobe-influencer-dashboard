@@ -1,0 +1,38 @@
+[
+  {
+    "creator_id": "c001",
+    "handle": "layoutwithlena",
+    "display_name": "Lena Ortiz",
+    "profile_url": "https://instagram.com/layoutwithlena",
+    "youtube_channel_url": "https://youtube.com/@layoutwithlena",
+    "website_url": "https://layoutwithlena.com",
+    "primary_platform": "instagram",
+    "niche": "Brand design and freelance systems",
+    "bio": "Brand designer sharing packaging breakdowns, client workflows, Illustrator tips, and document review systems for freelancers.",
+    "audience_persona": ["freelance_designers", "small_business_creators", "creative_educators"]
+  },
+  {
+    "creator_id": "c002",
+    "handle": "editwithmarcus",
+    "display_name": "Marcus Lee",
+    "profile_url": "https://youtube.com/@editwithmarcus",
+    "youtube_channel_url": "https://youtube.com/@editwithmarcus",
+    "website_url": "https://editwithmarcus.tv",
+    "primary_platform": "youtube",
+    "niche": "Video editing and creator productivity",
+    "bio": "Video editor teaching Premiere Pro, After Effects, review loops, creator operations, and fast turnaround systems for clients.",
+    "audience_persona": ["video_creators", "agency_editors", "content_operators"]
+  },
+  {
+    "creator_id": "c003",
+    "handle": "opswithnina",
+    "display_name": "Nina Shah",
+    "profile_url": "https://www.ninashah.co",
+    "youtube_channel_url": "https://youtube.com/@opswithnina",
+    "website_url": "https://www.ninashah.co",
+    "primary_platform": "website",
+    "niche": "Consulting workflows and client documentation",
+    "bio": "Consultant sharing document ops, proposal workflows, PDF reviews, e-signature habits, and systems for creative service teams.",
+    "audience_persona": ["consultants", "agency_owners", "operations_leads"]
+  }
+]

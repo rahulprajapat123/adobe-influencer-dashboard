@@ -1,0 +1,18 @@
+pipeline:
+  use_mock_data: true
+  vector_store: chromadb
+  analytics_store: duckdb
+  relational_store: postgresql_or_sqlite
+connectors:
+  instagram:
+    instaloader_enabled: true
+    apify_hook_enabled: true
+    official_api_optional: true
+  youtube:
+    ytdlp_enabled: true
+    youtube_data_api_optional: true
+  external_analytics:
+    csv_fallback_required: true
+transcription:
+  ffmpeg_hook_enabled: true
+  faster_whisper_hook_enabled: true

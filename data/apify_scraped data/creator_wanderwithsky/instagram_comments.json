@@ -1,0 +1,10 @@
+{
+  "actor": "apify/instagram-comment-scraper",
+  "skipped": true,
+  "reason": "No post URLs were available for wanderwithsky.",
+  "payload": {
+    "directUrls": [],
+    "resultsLimit": 10,
+    "includeNestedComments": true
+  }
+}

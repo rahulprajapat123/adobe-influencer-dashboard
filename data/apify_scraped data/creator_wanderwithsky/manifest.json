@@ -1,0 +1,40 @@
+{
+  "creator_id": "creator_wanderwithsky",
+  "handle": "wanderwithsky",
+  "profile_url": "https://www.instagram.com/wanderwithsky/",
+  "hashtags_used": [],
+  "actors": {
+    "instagram_profile": {
+      "count": 1,
+      "path": "D:\\adobe_project\\data\\apify_scraped data\\creator_wanderwithsky\\instagram_profile.json"
+    },
+    "instagram_profile_api": {
+      "count": 1,
+      "path": "D:\\adobe_project\\data\\apify_scraped data\\creator_wanderwithsky\\instagram_profile_api.json"
+    },
+    "instagram_scraper": {
+      "count": 8,
+      "path": "D:\\adobe_project\\data\\apify_scraped data\\creator_wanderwithsky\\instagram_scraper.json"
+    },
+    "instagram_post": {
+      "count": 8,
+      "path": "D:\\adobe_project\\data\\apify_scraped data\\creator_wanderwithsky\\instagram_posts.json"
+    },
+    "instagram_reel": {
+      "count": 8,
+      "path": "D:\\adobe_project\\data\\apify_scraped data\\creator_wanderwithsky\\instagram_reels.json"
+    },
+    "instagram_api": {
+      "count": 8,
+      "path": "D:\\adobe_project\\data\\apify_scraped data\\creator_wanderwithsky\\instagram_api.json"
+    },
+    "instagram_hashtag": {
+      "count": 24,
+      "path": "D:\\adobe_project\\data\\apify_scraped data\\creator_wanderwithsky\\instagram_hashtags.json"
+    }
+  },
+  "comments_actor": {
+    "count": 0,
+    "path": "D:\\adobe_project\\data\\apify_scraped data\\creator_wanderwithsky\\instagram_comments.json"
+  }
+}

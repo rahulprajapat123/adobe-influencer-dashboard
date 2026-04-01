@@ -1,0 +1,51 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: adobe_influencer
+      POSTGRES_USER: adobe
+      POSTGRES_PASSWORD: adobe
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    environment:
+      ENVIRONMENT: docker
+      DATABASE_URL: postgresql+psycopg2://adobe:adobe@postgres:5432/adobe_influencer
+      DUCKDB_PATH: /app/data/analytics.duckdb
+      VECTOR_STORE_PATH: /app/data/chroma
+      PYTHONPATH: /app/services/common
+      PORT: 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - postgres
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      ENVIRONMENT: docker
+      DATABASE_URL: postgresql+psycopg2://adobe:adobe@postgres:5432/adobe_influencer
+      DUCKDB_PATH: /app/data/analytics.duckdb
+      VECTOR_STORE_PATH: /app/data/chroma
+      PYTHONPATH: /app/services/common
+      PORT: 8501
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    depends_on:
+      - postgres
+      - api
+
+volumes:
+  postgres_data:

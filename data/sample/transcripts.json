@@ -1,0 +1,9 @@
+[
+  {"transcript_id": "tr001", "content_id": "p002", "creator_id": "c001", "start_seconds": 0.0, "end_seconds": 8.0, "text": "Today I am showing the revision workflow I use for packaging clients in Illustrator before I export a clean PDF proof.", "confidence": 0.95},
+  {"transcript_id": "tr002", "content_id": "p002", "creator_id": "c001", "start_seconds": 8.0, "end_seconds": 18.0, "text": "Once the PDF is ready I move comments into Acrobat so clients can mark issues without destroying the layout file.", "confidence": 0.93},
+  {"transcript_id": "tr003", "content_id": "p003", "creator_id": "c002", "start_seconds": 0.0, "end_seconds": 9.0, "text": "My editing pipeline starts in Premiere Pro, then I gather timestamps, review notes, and final approval in one place.", "confidence": 0.96},
+  {"transcript_id": "tr004", "content_id": "p003", "creator_id": "c002", "start_seconds": 9.0, "end_seconds": 20.0, "text": "For agency projects I still create a PDF review sheet because email feedback gets messy fast and sponsors need sign-off.", "confidence": 0.91},
+  {"transcript_id": "tr005", "content_id": "p004", "creator_id": "c002", "start_seconds": 0.0, "end_seconds": 11.0, "text": "CapCut wins on speed but Premiere plus After Effects is stronger for paid campaigns, templates, and repeatable collaboration.", "confidence": 0.94},
+  {"transcript_id": "tr006", "content_id": "p006", "creator_id": "c003", "start_seconds": 0.0, "end_seconds": 10.0, "text": "When I send a proposal I convert it to PDF, collect comments, then request signatures so no stakeholder is left behind.", "confidence": 0.97},
+  {"transcript_id": "tr007", "content_id": "p006", "creator_id": "c003", "start_seconds": 10.0, "end_seconds": 19.0, "text": "This matters because consultants lose momentum when document versioning, approvals, and review threads are spread everywhere.", "confidence": 0.92}
+]

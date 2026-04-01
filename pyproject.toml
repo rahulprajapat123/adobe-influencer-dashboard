@@ -1,0 +1,13 @@
+[project]
+name = "adobe-influencer-intelligence"
+version = "0.1.0"
+description = "Production-ready MVP for ranking creators for Adobe Acrobat and Adobe Creative Cloud partnerships."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "services/common"
+]
+testpaths = ["tests"]
