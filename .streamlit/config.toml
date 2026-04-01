@@ -8,11 +8,17 @@ font = "sans serif"
 [server]
 headless = true
 port = 8501
+address = "0.0.0.0"
 enableCORS = false
-enableXsrfProtection = true
+enableXsrfProtection = false
+maxUploadSize = 200
 enableWebsocketCompression = false
+runOnSave = false
+allowRunOnSave = false
 
 [browser]
 gatherUsageStats = false
-serverAddress = "0.0.0.0"
-serverPort = 8501
+
+[client]
+showErrorDetails = false
+toolbarMode = "minimal"
