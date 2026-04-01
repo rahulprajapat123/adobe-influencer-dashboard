@@ -6,7 +6,6 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/app/services/common
-ENV PORT=8501
 
 # Copy only requirements first for better caching
 COPY requirements.railway.txt ./requirements.txt
@@ -21,5 +20,5 @@ COPY . .
 # Expose Streamlit port
 EXPOSE 8501
 
-# Run Streamlit directly (Railway handles the port)
-CMD streamlit run serve_dashboard.py --server.port=${PORT:-8501} --server.address=0.0.0.0 --server.headless=true
+# Run Streamlit directly on app.py (PORT env var defaults to 8501 if not set)
+CMD streamlit run apps/dashboard/app.py --server.port=8501 --server.address=0.0.0.0 --server.headless=true
