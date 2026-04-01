@@ -20,5 +20,12 @@ COPY . .
 # Expose Streamlit port
 EXPOSE 8501
 
-# Run Streamlit directly on app.py (PORT env var defaults to 8501 if not set)
-CMD streamlit run apps/dashboard/app.py --server.port=8501 --server.address=0.0.0.0 --server.headless=true
+# Run Streamlit with Railway-friendly settings
+CMD streamlit run apps/dashboard/app.py \
+    --server.port=8501 \
+    --server.address=0.0.0.0 \
+    --server.headless=true \
+    --server.enableCORS=false \
+    --server.enableXsrfProtection=false \
+    --browser.serverAddress="0.0.0.0" \
+    --browser.gatherUsageStats=false
