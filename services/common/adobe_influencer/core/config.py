@@ -122,6 +122,7 @@ class AppSettings(BaseSettings):
             self.database_url = self._resolve_database_url(self.database_url)
 
     def ensure_paths(self) -> None:
+        """Create necessary directories. Silently skip if filesystem is read-only (e.g., Streamlit Cloud)."""
         for path in (
             self.data_dir,
             self.sample_dir,
@@ -134,7 +135,11 @@ class AppSettings(BaseSettings):
             self.media_audio_dir,
             self.media_transcript_dir,
         ):
-            path.mkdir(parents=True, exist_ok=True)
+            try:
+                path.mkdir(parents=True, exist_ok=True)
+            except (OSError, PermissionError):
+                # Filesystem is read-only (e.g., Streamlit Cloud) - skip silently
+                pass
 
     @property
     def cors_origins(self) -> list[str]:

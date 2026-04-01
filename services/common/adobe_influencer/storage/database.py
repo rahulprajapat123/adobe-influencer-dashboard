@@ -106,9 +106,15 @@ class DatabaseManager:
     def __init__(self, database_url: str) -> None:
         connect_args = {}
         if database_url.startswith("sqlite:///"):
-            sqlite_path = Path(database_url.replace("sqlite:///", "", 1))
-            if sqlite_path.name != ":memory:":
-                sqlite_path.parent.mkdir(parents=True, exist_ok=True)
+            sqlite_path_str = database_url.replace("sqlite:///", "", 1)
+            # Handle in-memory databases
+            if sqlite_path_str != ":memory:":
+                sqlite_path = Path(sqlite_path_str)
+                try:
+                    sqlite_path.parent.mkdir(parents=True, exist_ok=True)
+                except (OSError, PermissionError):
+                    # Filesystem is read-only - fall back to in-memory
+                    database_url = "sqlite:///:memory:"
             connect_args["check_same_thread"] = False
         self.engine = create_engine(database_url, future=True, pool_pre_ping=True, connect_args=connect_args)
         self.SessionLocal = sessionmaker(bind=self.engine, autoflush=False, autocommit=False)

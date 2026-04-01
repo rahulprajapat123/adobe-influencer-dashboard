@@ -26,7 +26,11 @@ class LocalHashEmbeddingFunction:
 
 class VectorStore:
     def __init__(self, persist_directory: str, collection_name: str) -> None:
-        self.client = chromadb.PersistentClient(path=persist_directory, settings=Settings(anonymized_telemetry=False))
+        try:
+            self.client = chromadb.PersistentClient(path=persist_directory, settings=Settings(anonymized_telemetry=False))
+        except (OSError, PermissionError):
+            # Filesystem is read-only - use in-memory client
+            self.client = chromadb.EphemeralClient(settings=Settings(anonymized_telemetry=False))
         self.collection: Collection = self.client.get_or_create_collection(
             name=collection_name,
             embedding_function=LocalHashEmbeddingFunction(),
