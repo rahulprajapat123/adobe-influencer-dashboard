@@ -1,10 +1,4 @@
-# System dependencies for Streamlit Cloud
-# This file lists apt packages needed by your app
-
-# For audio processing (faster-whisper)
 ffmpeg
-
-# For video downloading
 libsm6
 libxext6
 libxrender-dev
